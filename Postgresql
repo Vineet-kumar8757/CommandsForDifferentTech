@@ -1,0 +1,10 @@
+For installatiion of postgresql
+- sudo apt-get install postgresql postgresql-contrib
+
+To check the package details of the postgresql
+-apt show postgresql
+
+To check the status of the postgresql
+-sudo systemctl status postgresql.service
+
+
