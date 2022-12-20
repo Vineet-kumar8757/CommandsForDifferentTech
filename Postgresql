@@ -21,3 +21,7 @@ To list all the databases avaiable in the postgresql
 
 To use a particular database
 - \c database_name
+
+To shows all tables in the current schema
+- \dt
+
