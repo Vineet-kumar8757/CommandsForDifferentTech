@@ -12,3 +12,6 @@ To set the password of the postgresql
 
 To connect to the postgresql
 - sudo su -l postgres
+
+To open postgres using command line
+-sudo -u postgres psql
