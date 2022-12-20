@@ -19,3 +19,5 @@ To open postgres using command line
 To list all the databases avaiable in the postgresql
 -SELECT datname FROM pg_database;
 
+To use a particular database
+- \c database_name
