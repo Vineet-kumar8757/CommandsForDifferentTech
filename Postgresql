@@ -7,4 +7,8 @@ To check the package details of the postgresql
 To check the status of the postgresql
 -sudo systemctl status postgresql.service
 
+To set the password of the postgresql
+-sudo passwd postgres
 
+To connect to the postgresql
+- sudo su -l postgres
