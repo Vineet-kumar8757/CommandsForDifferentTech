@@ -15,3 +15,7 @@ To connect to the postgresql
 
 To open postgres using command line
 -sudo -u postgres psql
+
+To list all the databases avaiable in the postgresql
+-SELECT datname FROM pg_database;
+
