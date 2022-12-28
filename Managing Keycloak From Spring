@@ -38,3 +38,10 @@ SEARCH FOR A USER AND PRINT THE USERNAME TO THE CONSOLE
 List<UserRepresentation> user = kc.realm("demo").users()
                                     .search("johndoe", 0, 10);
 users.forEach(user -> System.out.println(user.getUsername()));
+
+
+
+
+
+
+
