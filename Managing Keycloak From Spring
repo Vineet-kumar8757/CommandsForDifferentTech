@@ -1,0 +1,40 @@
+For managing keycloak from spring, use the following dependency.
+
+<dependency>
+    <groupId>org.keycloak</groupId>
+    <artifactId>keycloak-admin-client</artifactId>
+    <version>${keycloak.version}</version>
+</dependency>
+
+INITIALIZE THE KEYCLOAK CLIENT:
+
+Keycloak kc = KeycloakBuilder.builder()
+            .serverUrl("http://your.keycloak.domain/auth")
+            .realm("master")
+            .username("admin")
+            .password("secret")
+            .clientId("admin-cli")
+            .resteasyClient(
+                new ResteasyClientBuilder()
+                    .connectionPoolSize(10).build()
+            ).build();
+            
+CREATE A NEW REALM IN KEYCLOAK
+
+RealmRepresentation realm = new RealmRepresentation();
+realm.setRealm("demo");
+realm.set... // all the realm attributes to set
+kc.realms().create(realm);
+
+CREATE A NEW USER IN THE CREATED DEMO REALM
+
+UserRepresentation user = new UserRepresentation();
+user.setUsername("johndoe");
+user.set... // all the user attributes to set
+kc.realm("demo").users().create(user);
+
+SEARCH FOR A USER AND PRINT THE USERNAME TO THE CONSOLE
+
+List<UserRepresentation> user = kc.realm("demo").users()
+                                    .search("johndoe", 0, 10);
+users.forEach(user -> System.out.println(user.getUsername()));
